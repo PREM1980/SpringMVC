@@ -2,24 +2,32 @@
 	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
- 	<context-param>
+	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
- 	<servlet>
+	<servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
- 	<servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	<context-param>
+		<param-name>GOOGLE_CLIENT_ID</param-name>
+		<param-value>594955281886-bqr0dbmdrabqaonmheiqk0skddf5alk5.apps.googleusercontent.com</param-value>
+	</context-param>
+	<context-param>
+		<param-name>GOOGLE_REDIRECT_URL</param-name>
+		<param-value>http://localhost:8080/SpringMVC/oauth2callback</param-value>
+	</context-param>
 </web-app>	
- 
+ 	
  
 	
  

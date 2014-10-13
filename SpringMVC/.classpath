@@ -42,5 +42,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/jars/json-20140107.jar"/>
+	<classpathentry kind="lib" path="C:/jars/wallet-online-1.0.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
