@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.applet.*;
+import com.webservice.demo.*;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -54,10 +55,21 @@ public class StudentController {
    @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
    public String addStudent(@ModelAttribute("SpringWe1")Studentdetails student, 
    ModelMap model) {
-   //   model.addAttribute("name", student.getName());
-   //   model.addAttribute("age", student.getAge());
-   //   model.addAttribute("id", student.getId());
-   //   
+      model.addAttribute("name", student.getSt().getFname());
+      //model.addAttribute("age", student.getAge());
+      //model.addAttribute("id", student.getId());
+      //
+      com.webservice.demo.Studentdetails sd = new com.webservice.demo.Studentdetails();
+      com.webservice.demo.ContactInfo ci = new com.webservice.demo.ContactInfo();
+      com.webservice.demo.Student st = new com.webservice.demo.Student();
+      st.setFname(student.getSt().getFname());
+      st.setFname(student.getSt().getMname());
+      st.setFname(student.getSt().getLname());
+      
+      sd.setSt(st);
+      HelloWebServiceService hs = new HelloWebServiceService();
+      String res = hs.getHelloWebServicePort().sayHello(sd);
+      System.out.println(res);
       return "result";
    }
    
